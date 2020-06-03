@@ -1,15 +1,16 @@
 <template>
   <div class="hello">
     <vue-tabs>
-        <v-tab title="First tab">
-          First tab content
+        <v-tab :title="cat1">
           <div class="act-form">
-              <iframe :src="src" class="iframe-position"></iframe>
+              <iframe :src="stockList(cat1)" class="iframe-position"></iframe>
           </div>
         </v-tab>
 
-        <v-tab title="Second tab">
-          Second tab content
+        <v-tab :title="cat2">
+          <div class="act-form">
+              <iframe :src="stockList(cat2)" class="iframe-position"></iframe>
+          </div>
         </v-tab>
 
         <v-tab title="Third tab">
@@ -27,7 +28,13 @@ export default {
   },
   data () {
     return {
-      src: 'https://segmentfault.com/a/1190000016258735'
+      cat1: '金控業',
+      cat2: '證券業'
+    }
+  },
+  methods: {
+    stockList: function(val) {
+      return `https://goodinfo.tw/StockInfo/StockList.asp?MARKET_CAT=全部&INDUSTRY_CAT=${val}&SHEET=交易狀況&SHEET2=日&RPT_TIME=最新資料`
     }
   }
 }
@@ -39,10 +46,11 @@ export default {
   overflow: hidden;
 }
 .iframe-position {
-  width: 900px;
-  height: 700px;
+  width: 1100px;
+  height: 1700px;
   position: relative; 
-  top: -310px;
+  top: -940px;
+  /* left: -200px; */
 }
 h3 {
   margin: 40px 0 0;

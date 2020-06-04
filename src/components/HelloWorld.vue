@@ -1,20 +1,10 @@
 <template>
   <div class="hello">
     <vue-tabs>
-        <v-tab :title="cat1">
+        <v-tab :title="item" v-for="(item, index) in items" :key="index">
           <div class="act-form">
-              <iframe :src="stockList(cat1)" class="iframe-position"></iframe>
+              <iframe :src="stockList(item)" class="iframe-position"></iframe>
           </div>
-        </v-tab>
-
-        <v-tab :title="cat2">
-          <div class="act-form">
-              <iframe :src="stockList(cat2)" class="iframe-position"></iframe>
-          </div>
-        </v-tab>
-
-        <v-tab title="Third tab">
-          Third tab content
         </v-tab>
     </vue-tabs>
   </div>
@@ -28,8 +18,7 @@ export default {
   },
   data () {
     return {
-      cat1: '金控業',
-      cat2: '證券業'
+      items: [ '金控業','銀行業','證券業','保險業','航運業','觀光事業','貿易百貨業','食品工業','紡織纖維','橡膠工業','半導體業','光電業','通信網路業','資訊服務業','電腦及週邊設備業','電子通路業']
     }
   },
   methods: {

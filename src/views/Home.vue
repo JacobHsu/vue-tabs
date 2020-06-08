@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App" :items="items"/>
+    <HelloWorld msg="Welcome to Your Vue.js App" :items="todayItems"/>
   </div>
 </template>
 
@@ -15,8 +15,20 @@ export default {
   },
   data () {
     return {
-      items: [ '航運業','觀光事業','貿易百貨業','食品工業','紡織纖維','橡膠工業','半導體業','光電業','通信網路業','資訊服務業','電腦及週邊設備業','電子通路業']
+      items: [ '航運業','觀光事業','貿易百貨業','食品工業','紡織纖維','橡膠工業','半導體業','光電業','通信網路業','資訊服務業','電腦及週邊設備業','電子通路業'],
+      todayItems: []
+    }
+  },
+  created() {
+    const randomItem = this.randomItem()
+    this.todayItems = [randomItem]
+  },
+  methods: {
+    randomItem () {
+      const randomItem = this.items[Math.floor(Math.random() * this.items.length)];
+      return randomItem
     }
   }
+
 }
 </script>

@@ -2,7 +2,9 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/financial">Financial</router-link>
+      <router-link to="/financial">Financial</router-link> |
+      <router-link to="/electronics">Electronics</router-link> |
+      <router-link to="/etf">ETF</router-link>
     </div>
     <router-view/>
   </div>

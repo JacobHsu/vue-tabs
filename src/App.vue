@@ -4,7 +4,8 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/financial">Financial</router-link> |
       <router-link to="/electronics">Electronics</router-link> |
-      <router-link to="/etf">ETF</router-link>
+      <router-link to="/etf">ETF</router-link> |
+      <a href="https://ic.tpex.org.tw" target="_blank">產業價值鏈</a>
     </div>
     <router-view/>
   </div>
